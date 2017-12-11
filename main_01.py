@@ -22,4 +22,6 @@ fd = open(temp[0]+"_count.csv","w")
 fd.write("word,count\n")
 for k in hash:
   fd.write("%s,%d\n"%(k.encode("utf8"),hash[k]))
-  #fd.write("%s,%d\n"%(k,hash[k]))
+  
+for m in hash:
+  print("%s %d\n"%(m.encode("utf8"),hash[m]))
