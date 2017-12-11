@@ -1,6 +1,8 @@
-# coding=utf-8
+#coding=utf-8
+
+#python3
 import jieba
-file = raw_input("請輸入演講文稿的檔案名稱(含副檔名)")
+file = input("請輸入演講文稿的檔案名稱(含副檔名)")
 ret = open(file, "r").read()
 seglist = jieba.cut(ret, cut_all=False)
 
@@ -19,4 +21,5 @@ json.dump(hash,open(temp[0]+"_count.json","w"))
 fd = open(temp[0]+"_count.csv","w")
 fd.write("word,count\n")
 for k in hash:
-  fd.write("%s,%d\n"%(k.encode("utf8"),hash[k]))
+  #fd.write("%s,%d\n"%(k.encode("utf8"),hash[k]))
+  fd.write("%s,%d\n"%(k,hash[k]))
